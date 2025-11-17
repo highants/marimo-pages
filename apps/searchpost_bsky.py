@@ -3,14 +3,13 @@ import marimo
 __generated_with = "0.17.8"
 app = marimo.App(width="medium")
 
+with app.setup:
+    import marimo as mo
+    from atproto import Client
+    from datetime import datetime, timezone
 
 @app.cell
 def _():
-    import marimo as mo
-    import polars as pl
-    from atproto import Client, models
-    from datetime import datetime, timezone, timedelta
-
     # Blueskyクライアント設定
     bsky_id = mo.ui.text(
         label="ユーザーハンドル：",
