@@ -15,6 +15,8 @@ def _(mo):
 @app.cell(hide_code=True)
 def _():
     import marimo as mo
+    import micropip
+    await micropip.install("atproto")
     from atproto import Client, models, client_utils
     return Client, mo
 
